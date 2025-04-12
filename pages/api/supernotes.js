@@ -6,12 +6,12 @@ export default async function handler(req, res) {
   const response = await fetch('https://api.supernotes.app/v1/cards/get/select', {
     method: 'POST',
     headers: {
-      'Api-Key': process.env.SUPERNOTES_API_KEY, // ✅ CORRECT HEADER NAME
+      'Api-Key': process.env.SUPERNOTES_API_KEY,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      search,
-      limit: 10,
+      tags: [search],  // ✅ searching by tag
+      limit: 10
     }),
   });
 
