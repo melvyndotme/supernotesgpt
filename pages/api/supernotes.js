@@ -3,6 +3,12 @@ export default async function handler(req, res) {
 
   const { search } = req.body;
 
+  // ✅ Log the search input
+  console.log("🔍 Supernotes Search:", search);
+
+  // ✅ Log the first few characters of your API key (just for debugging — safe!)
+  console.log("🔐 SUPERNOTES_API_KEY (first 5):", process.env.SUPERNOTES_API_KEY?.slice(0, 5));
+
   const response = await fetch('https://api.supernotes.app/jit-plugin/cards/selectCards', {
     method: 'POST',
     headers: {
