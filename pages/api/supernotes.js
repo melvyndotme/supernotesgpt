@@ -10,20 +10,19 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      filter_group: {
-        type: "group",
-        operator: "and",
-        filters: [
-          {
-            type: "tag",
-            operator: "equals",
-            arg: search,
-            name: "Tag Filter",
-            inv: false,
-            case_sensitive: false
-          }
-        ]
-      },
+filter_group: {
+  operator: "and",
+  filters: [
+    {
+      type: "tag",
+      operator: "equals",
+      arg: search,
+      name: "Tag Filter",
+      inv: false,
+      case_sensitive: false
+    }
+  ]
+},
       limit: 10
     }),
   });
